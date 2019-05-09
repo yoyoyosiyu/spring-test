@@ -113,15 +113,14 @@ public class BookCommandComponent {
     @ShellMethod("update a book use another method")
     public String updateBook(Long id) {
 
-        //Book book = entityManager.find(Book.class, id);
+        Book book = entityManager.find(Book.class, id);
 
-        entityManager.setFlushMode(FlushModeType.AUTO);
+        book.setComments(null);
+        entityManager.flush();
 
-        Book book1 = new Book();
-        book1.setId(id);
-        book1.addComment(new BookComment("good job!"));
+        book.addComment(new BookComment("good job!"));
 
-        entityManager.merge(book1);
+        //entityManager.merge(book1);
 
         //entityManager.persist(book);
 

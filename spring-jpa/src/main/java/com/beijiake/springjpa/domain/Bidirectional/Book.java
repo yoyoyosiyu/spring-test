@@ -26,7 +26,8 @@ public class Book {
 
         this.comments.clear();
 
-        this.comments.addAll(comments);
+        if (comments != null)
+            this.comments.addAll(comments);
     }
 
 
