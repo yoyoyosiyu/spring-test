@@ -21,3 +21,14 @@ https://www.baeldung.com/hibernate-entitymanager
 
 The best way to map a @OneToMany relationship with JPA and Hibernate
 https://vladmihalcea.com/the-best-way-to-map-a-onetomany-association-with-jpa-and-hibernate/
+
+在intellij idea 编辑器中jpql 中的entity 总是显示Cannot resolve symbol
+IntelliJ IDEA highlights @Entity class names with “Cannot resolve symbol” in JPQL
+https://stackoverflow.com/questions/12420996/intellij-idea-highlights-entity-class-names-with-cannot-resolve-symbol-in-jpq
+
+Jackson – Bidirectional Relationships Jackson JSON infinite recursion problem
+https://www.baeldung.com/jackson-bidirectional-relationships-and-infinite-recursion
+
+当实体有懒加载的成员时候，如果希望加载这些内容
+5 ways to initialize lazy associations and when to use them
+https://thoughts-on-java.org/5-ways-to-initialize-lazy-relations-and-when-to-use-them/
