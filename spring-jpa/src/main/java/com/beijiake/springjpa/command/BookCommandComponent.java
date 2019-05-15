@@ -3,17 +3,16 @@ package com.beijiake.springjpa.command;
 import com.beijiake.springjpa.domain.Bidirectional.Book;
 import com.beijiake.springjpa.domain.Bidirectional.BookComment;
 import com.beijiake.springjpa.repository.BookRepository;
+import com.beijiake.springjpa.utils.ObjectMerge;
 import com.beijiake.springjpa.utils.RandomNumber;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ansi.AnsiColor;
-import org.springframework.boot.ansi.AnsiElement;
 import org.springframework.boot.ansi.AnsiOutput;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
-import javax.persistence.FlushModeType;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -133,12 +132,23 @@ public class BookCommandComponent {
 
         //Book book = entityManager.find(Book.class, id);
 
+        Book book = bookRepository.findById(id).orElse(null);
+
+        if (book == null) return "No book";
+
+
         Book book1 = new Book();
         book1.setId(id);
-
         book1.addComment(new BookComment("good job!"));
 
-        bookRepository.save(book1);
+        if (book1.getComments().size()>0) {
+            book.setComments(null);
+            bookRepository.flush();
+        }
+
+        ObjectMerge.merge(book, book1);
+
+        //bookRepository.save(book);
 
         //entityManager.persist(book);
 

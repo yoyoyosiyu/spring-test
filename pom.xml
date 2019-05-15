@@ -10,6 +10,8 @@
 
     <modules>
         <module>spring-jpa</module>
+        <module>spring-json</module>
+        <module>spring-persistence</module>
     </modules>
 
 
