@@ -6,8 +6,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Setter
 @Getter
@@ -17,15 +17,12 @@ public class Department {
     @Id
     Long id;
 
-
     @NotNull
     @Column(unique = true)
     String name;
 
-
     @OneToMany(mappedBy = "department", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    List<Employee> employees = new ArrayList<>();
-
+    Set<Employee> employees = new HashSet<>();
 
 
 }

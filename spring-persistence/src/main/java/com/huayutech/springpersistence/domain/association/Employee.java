@@ -24,7 +24,7 @@ public class Employee {
     @Column
     String lastName;
 
-    @JsonIgnoreProperties("employees")
+    //@JsonIgnoreProperties("employees")
     @ManyToOne(fetch = FetchType.LAZY)
     Department department;
 
