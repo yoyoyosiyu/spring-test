@@ -1,5 +1,6 @@
 package com.huayutech.springpersistence.web;
 
+import com.huayutech.springpersistence.DTO.EmployeeDTO;
 import com.huayutech.springpersistence.domain.association.*;
 import com.huayutech.springpersistence.utils.RandomNumber;
 import org.springframework.http.HttpStatus;
@@ -44,6 +45,14 @@ public class EmployeeController {
         return new ResponseEntity(employee, HttpStatus.OK);
 
     }
+
+    @Transactional
+    @PutMapping("/{employeeId}")
+    public ResponseEntity doUpdateEmployee(@RequestBody EmployeeDTO employeeDTO) {
+
+        return new ResponseEntity(HttpStatus.OK);
+    }
+
 
     @Transactional
     @PostMapping("/{employeeId}/addresses")
