@@ -50,6 +50,8 @@ public class EmployeeController {
     @PutMapping("/{employeeId}")
     public ResponseEntity doUpdateEmployee(@RequestBody EmployeeDTO employeeDTO) {
 
+        String lastName = employeeDTO.getLastName().orElse(null);
+
         return new ResponseEntity(HttpStatus.OK);
     }
 
