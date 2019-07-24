@@ -13,6 +13,7 @@
         <module>spring-json</module>
         <module>spring-persistence</module>
         <module>spring-jpa-multiselect</module>
+        <module>querydsl</module>
     </modules>
 
 

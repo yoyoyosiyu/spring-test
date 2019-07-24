@@ -1,4 +1,17 @@
 
+### querydsl
+
+使用querydsl建立动态查询的测试模块
+
+需要通过 maven clean compile 来生成Q类
+
+参考的文章：
+[詳解spring boot jpa整合QueryDSL來簡化複雜操作](https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/297090/)
+
+
+
+
+
 关于如何正确使用flush
 A beginner’s guide to Hibernate flush operation order
 https://vladmihalcea.com/hibernate-facts-knowing-flush-operations-order-matters/
