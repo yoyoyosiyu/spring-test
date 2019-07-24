@@ -6,14 +6,13 @@ import com.huayu.querydsl.domain.QPost;
 import com.huayu.querydsl.repository.PostRepository;
 import com.querydsl.core.types.Predicate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 
+//@CrossOrigin(methods = {RequestMethod.OPTIONS, RequestMethod.DELETE, RequestMethod.GET, RequestMethod.PUT, RequestMethod.POST})
+@CrossOrigin
 @RestController
 @RequestMapping("/posts")
 public class PostController {
@@ -51,7 +50,11 @@ public class PostController {
         iterable.forEach(posts::add);
 
         return posts;
+    }
 
+    @PostMapping
+    public void doCreatePost() {
+        return;
     }
 
 }
